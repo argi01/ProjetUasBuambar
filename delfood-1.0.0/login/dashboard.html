@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Delfood - Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">KaisarFoot</div>
+  <div class="search-bar">
+    <input type="text" placeholder="Cari makanan atau resto...">
+  </div>
+  <div class="user-menu">
+    <a href="profile.html" class="menu-item">Profile</a>
+    <a href="index.html" class="menu-item">Logout</a>
+  </div>
+</header>
+
+
+<!-- PROMO CAROUSEL -->
+<div class="promo-wrapper">
+  <button class="arrow left" onclick="scrollPromo(-1)">❮</button>
+  <div class="promo-carousel" id="promoCarousel">
+    <img class="promo-item" src="https://cdn.idntimes.com/content-images/community/2020/06/1994aabc-387e-414c-aab7-62ebbfaf8200-f5c7e741adf17a0527868e44660b1cba.jpeg" />
+    <img class="promo-item" src="https://cdn.idntimes.com/content-images/community/2018/04/0643fe0c-099c-42d5-8b29-7bbf2076362b-b7a39ece3bfc2110724d7a3d8b88b959.jpg" />
+    <img class="promo-item" src="https://2.bp.blogspot.com/-A2QhGjiQn0A/Waz9w97T-VI/AAAAAAAADyA/qc0TWNsRsek8DeBf_cqPHblzu-tUnRrKgCLcBGAs/s1600/bakso%2Bspecial.jpg" />
+    <img class="promo-item" src="https://via.placeholder.com/200x100?text=Matcha+Crave" />
+    <img class="promo-item" src="https://via.placeholder.com/200x100?text=Gratis+Ongkir" />
+    <img class="promo-item" src="https://via.placeholder.com/200x100?text=Beli+1+Gratis+1" />
+  </div>
+  <button class="arrow right" onclick="scrollPromo(1)">❯</button>
+
+</div>
+
+
+<!-- PRODUK GRID -->
+<div class="container">
+  <h2>Promo Makanan Pesan Antar</h2>
+  </div>
+ <div class="tab-nav">
+  <button class="tab-btn active" onclick="selectTab(this)">Rekomendasi</button>
+  <button class="tab-btn" onclick="selectTab(this)">Terlaris</button>
+  <button class="tab-btn" onclick="selectTab(this)">Top Rating</button>
+</div>
+<div class="products-grid">
+  <div class="card" data-kategori="rekomendasi,terlaris,toprating">
+    <img src="https://www.wandercooks.com/wp-content/uploads/2023/05/nasi-goreng-3.jpg" />
+    <div class="card-body">
+      <span class="badge">Promo</span>
+      <h4>Nasi Goreng Spesial</h4>
+      <p>Rp 20.000 · 20-30 min</p>
+    </div>
+  </div>
+
+  <div class="card" data-kategori="rekomendasi,toprating">
+    <img src="https://img.okezone.com/okz/500/library/images/2021/02/04/faiznkk98mggpvrjn4dw_17662.jpg" />
+    <div class="card-body">
+      <span class="badge">Promo</span>
+      <h4>Ayam Bakar Madu</h4>
+      <p>Rp 25.000 · 25-35 min</p>
+    </div>
+  </div>
+
+  <div class="card" data-kategori="rekomendasi,terlaris">
+    <img src="https://png.pngtree.com/background/20230614/original/pngtree-cheeseburger-with-cheese-picture-image_3520739.jpg" />
+    <div class="card-body">
+      <span class="badge">Food</span>
+      <h4>Burger Keju</h4>
+      <p>Rp 22.000 · 15-25 min</p>
+    </div>
+  </div>
+
+  <div class="card" data-kategori="rekomendasi,toprating">
+    <img src="https://1.bp.blogspot.com/-wHa5IJxRBAI/X8CTJwBb5NI/AAAAAAAAIXk/sdbmNjrLcKMxphaO1pQYjaHJ-L_ElPBawCPcBGAsYHg/s1080/125495999_383111872743481_2858534706304033281_n.jpg" />
+    <div class="card-body">
+      <span class="badge">Promo</span>
+      <h4>Sate Ayam</h4>
+      <p>Rp 18.000 · 15-25 min</p>
+    </div>
+  </div>
+
+  <div class="card" data-kategori="rekomendasi,terlaris">
+    <img src="https://www.biotifor.or.id/wp-content/uploads/2023/11/maxresdefault-1.jpg" />
+    <div class="card-body">
+      <span class="badge">Snack</span>
+      <h4>Dimsum Ayam</h4>
+      <p>Rp 12.000 · 10-20 min</p>
+    </div>
+  </div>
+
+  <div class="card" data-kategori="rekomendasi">
+    <img src="https://i.pinimg.com/originals/5d/31/ef/5d31ef90cd6c389e07bc48a08e583122.jpg" />
+    <div class="card-body">
+      <span class="badge">Drink</span>
+      <h4>Es Teh Manis</h4>
+      <p>Rp 5.000 · 10-15 min</p>
+    </div>
+  </div>
+
+  <div class="card" data-kategori="rekomendasi">
+    <img src="https://1.bp.blogspot.com/-vDdbPxvc3vw/XpvsM7u-AgI/AAAAAAAAGo0/ZlM0-yQ6FykT5iPYCj6VH7-HLkCRsM5CQCLcBGAsYHQ/s1600/mie-ayam-dua-putra-jogja.jpg" />
+    <div class="card-body">
+      <span class="badge">Food</span>
+      <h4>Mie Ayam Komplit</h4>
+      <p>Rp 17.000 · 20-30 min</p>
+    </div>
+  </div>
+
+  <div class="card" data-kategori="rekomendasi">
+    <img src="https://noir.web.id/wp-content/uploads/2022/04/kopi-susu-gula-aren.jpg" />
+    <div class="card-body">
+      <span class="badge">Drink</span>
+      <h4>Kopi Susu Gula Aren</h4>
+      <p>Rp 15.000 · 10-15 min</p>
+    </div>
+  </div>
+
+  <!-- Tambahan 22 produk baru -->
+
+  <div class="card" data-kategori="rekomendasi,terlaris">
+    <img src="https://cdn1-production-images-kly.akamaized.net/AVz0AlOt9cKQ1QJEFnc71Q3LIlQ=/0x0:1000x667/640x426/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3552535/original/097828700_1631073236-resep_kwetiau_goreng.jpg" />
+    <div class="card-body">
+      <span class="badge">Food</span>
+      <h4>Kwetiau Goreng</h4>
+      <p>Rp 22.000 · 20-30 min</p>
+    </div>
+  </div>
+
+  <div class="card" data-kategori="rekomendasi,toprating">
+    <img src="https://resepkoki.id/wp-content/uploads/2017/07/resep-bakso-ayam.jpg" />
+    <div class="card-body">
+      <span class="badge">Food</span>
+      <h4>Bakso Ayam</h4>
+      <p>Rp 18.000 · 15-25 min</p>
+    </div>
+  </div>
+
+  <div class="card" data-kategori="rekomendasi">
+    <img src="https://cdns.klimg.com/merdeka.com/i/w/news/2020/12/04/1252680/content_images/670x335/20201204111651-1-ayam-penyet-007-tantri-setyorini.jpg" />
+    <div class="card-body">
+      <span class="badge">Food</span>
+      <h4>Ayam Penyet</h4>
+      <p>Rp 25.000 · 20-30 min</p>
+    </div>
+  </div>
+
+  <div class="card" data-kategori="rekomendasi,terlaris">
+    <img src="https://img-global.cpcdn.com/recipes/97e5ea388f4d8e0d/1200x630cq70/photo.jpg" />
+    <div class="card-body">
+      <span class="badge">Drink</span>
+      <h4>Es Jeruk</h4>
+      <p>Rp 7.000 · 10-15 min</p>
+    </div>
+  </div>
+
+  <div class="card" data-kategori="rekomendasi">
+    <img src="https://asset.kompas.com/crops/fzUunwKJ8A28l33OrEcuqfVt2dE=/0x0:780x390/750x500/data/photo/2020/08/19/5f3cf6a9e7a20.jpg" />
+    <div class="card-body">
+      <span class="badge">Drink</span>
+      <h4>Es Kopi Hitam</h4>
+      <p>Rp 10.000 · 10-15 min</p>
+    </div>
+  </div>
+
+  <div class="card" data-kategori="rekomendasi,toprating">
+    <img src="https://resepkoki.id/wp-content/uploads/2017/11/resep-sate-kambing.jpg" />
+    <div class="card-body">
+      <span class="badge">Food</span>
+      <h4>Sate Kambing</h4>
+      <p>Rp 30.000 · 20-30 min</p>
+    </div>
+  </div>
+
+  <div class="card" data-kategori="rekomendasi,terlaris,toprating">
+    <img src="https://asset.kompas.com/crops/LVKwfWHzRhy5L3s2Zqj-8r28Ma8=/0x0:1000x667/750x500/data/photo/2021/06/02/60b726244e36c.jpg" />
+    <div class="card-body">
+      <span class="badge">Food</span>
+      <h4>Spaghetti Bolognese</h4>
+      <p>Rp 28.000 · 20-30 min</p>
+    </div>
+  </div>
+
+  <div class="card" data-kategori="rekomendasi,toprating">
+    <img src="https://cdn0-production-images-kly.akamaized.net/N2v3GldQ7O1ymQFBV20vfWaJQjc=/0x221:2048x1371/1200x900/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3881483/original/075473800_1635148842-shutterstock_1737941809.jpg" />
+    <div class="card-body">
+      <span class="badge">Drink</span>
+      <h4>Smoothie Mangga</h4>
+      <p>Rp 18.000 · 15-20 min</p>
+    </div>
+  </div>
+
+  <div class="card" data-kategori="rekomendasi,toprating">
+    <img src="https://cdn1-production-images-kly.akamaized.net/Ogoa4XN5wPZ5SYAGvM2RBZMC3vI=/0x0:1000x667/1200x900/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3552535/original/097828700_1631073236-resep_kwetiau_goreng.jpg" />
+    <div class="card-body">
+      <span class="badge">Food</span>
+      <h4>Kwetiau Siram</h4>
+      <p>Rp 24.000 · 20-30 min</p>
+    </div>
+  </div>
+
+  <div class="card" data-kategori="rekomendasi">
+    <img src="https://cdn1-production-images-kly.akamaized.net/Hv2rskO7tq6mXExI5nXz5Q8nCcA=/0x30:1000x697/1200x900/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3467516/original/054249200_1626173729-shutterstock_1847160781.jpg" />
+    <div class="card-body">
+      <span class="badge">Snack</span>
+      <h4>Pisang Goreng</h4>
+      <p>Rp 10.000 · 10-15 min</p>
+    </div>
+  </div>
+
+  <div class="card" data-kategori="rekomendasi,terlaris">
+    <img src="https://cdn0-production-images-kly.akamaized.net/8QkGAQ3gxk1v1vFe57qZf9AqUv4=/0x30:1000x697/750x500/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3467517/original/031776000_1626173729-shutterstock_1917875015.jpg" />
+    <div class="card-body">
+      <span class="badge">Drink</span>
+      <h4>Jus Alpukat</h4>
+      <p>Rp 15.000 · 10-15 min</p>
+    </div>
+  </div>
+
+  <div class="card" data-kategori="rekomendasi,toprating">
+    <img src="https://asset.kompas.com/crops/N7SHJi5Sm4QJYiQiBlC9PVq2q10=/0x0:1000x667/750x500/data/photo/2021/04/01/6065406978cb0.jpg" />
+    <div class="card-body">
+      <span class="badge">Drink</span>
+      <h4>Teh Tarik</h4>
+      <p>Rp 12.000 · 10-15 min</p>
+    </div>
+  </div>
+<div class="product-detail-modal" id="productDetailModal">
+  <div class="product-detail-content">
+    <span class="close" onclick="closeProductDetail()">&times;</span>
+    
+    <div class="product-detail-left">
+      <img id="detailImage" src="" alt="Gambar Produk">
+    </div>
+    
+    <div class="product-detail-right">
+      <h2 id="detailName">Nama Produk</h2>
+      <p id="detailRating">⭐ 4.8 (50 Ulasan)</p>
+      <h3 id="detailPrice">Rp 0</h3>
+      
+      <p><strong>Deskripsi:</strong></p>
+      <p id="detailDesc">Detail produk akan tampil di sini.</p>
+
+      <label for="detailQty">Jumlah:</label>
+      <input type="number" id="detailQty" value="1" min="1">
+
+      <div class="detail-buttons">
+        <button class="btn-outline" onclick="closeProductDetail()">Masukkan Keranjang</button>
+     <button class="btn-primary" onclick="proceedToOrder()">Beli Sekarang</button>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+// ceklis animasi
+<div id="successOverlay" class="success-overlay">
+  <div class="checkmark-circle">
+    <div class="background"></div>
+    <div class="checkmark"></div>
+  </div>
+  <p>Pesanan Berhasil!</p>
+</div>
+
+
+<!-- MODAL PESAN PRODUK -->
+<div class="modal" id="orderModal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    
+    <div id="productDetailSection">
+    <h3 id="productName">Nama Produk</h3>
+      <img id="productImage" src="" style="width:100%; border-radius: 10px; margin-bottom: 10px;" />
+      <p id="productDescription">Harga · Estimasi waktu</p>
+      <button onclick="showOrderForm()">Pesan Sekarang</button>
+    </div>
+
+    <div id="orderFormSection" style="display: none;">
+      <h3>Form Pemesanan</h3>
+      <label>Jumlah:</label>
+      <input type="number" id="quantity" min="1" value="1" />
+
+      <label>Metode Pembayaran:</label>
+      <select id="paymentMethod" onchange="handlePaymentChange()">
+        <option value="cod">Bayar di Tempat</option>
+        <option value="dana">Dana</option>
+        <option value="bca">BCA</option>
+      </select>
+
+      <div id="rekeningInfo" style="display: none; margin-top: 10px;">
+        <label id="rekeningLabel"></label>
+        <input type="text" id="rekeningValue" readonly />
+      </div>
+
+      <label><input type="checkbox" id="useVoucher" /> Gunakan Voucher</label>
+
+      <p style="margin-top: 10px;">Total: <strong id="totalBayar">Rp 0</strong></p>
+
+     <button onclick="submitOrder()">Konfirmasi Pesanan</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
