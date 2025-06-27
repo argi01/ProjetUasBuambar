@@ -205,6 +205,74 @@ function submitOrder() {
   }, 2500);
 }
 
+// filtering untuk produk
+function filterProducts(category) {
+  const cards = document.querySelectorAll('.card');
+  const links = document.querySelectorAll('.sidebar-kategori a');
 
+  // Tampilkan produk sesuai kategori
+  cards.forEach(card => {
+    const kategori = card.getAttribute('data-category');
+    if (category === 'all' || kategori === category) {
+      card.classList.add('show');
+    } else {
+      card.classList.remove('show');
+    }
+  });
+
+  // Update highlight link sidebar
+  links.forEach(link => {
+    link.classList.remove('active');
+    const onclickAttr = link.getAttribute('onclick');
+    if (onclickAttr && onclickAttr.includes(`'${category}'`)) {
+      link.classList.add('active');
+    }
+  });
+}
+
+
+
+  // Auto-generate produk (10 per kategori)
+  const produkContainer = document.getElementById("productsContainer");
+  const kategoriList = [
+    { id: "ringan", label: "Makanan Ringan", items: ["Keripik Kentang", "Kacang Bawang", "Stick Talas", "Kerupuk Udang", "Tortilla Chips", "Chiki Balls", "Coklat Bar", "Permen Jeruk", "Popcorn Manis", "Roti Mini"] },
+    { id: "bahan", label: "Bahan Pokok", items: ["Beras Premium", "Gula Pasir", "Garam Dapur", "Minyak Goreng", "Tepung Terigu", "Telur Ayam", "Santan Instan", "Bawang Merah", "Bawang Putih", "Kecap Manis"] },
+    { id: "sarapan", label: "Menu Sarapan", items: ["Roti Lapis", "Telur Rebus", "Bubur Ayam", "Sereal Susu", "Mie Rebus", "Lontong Sayur", "Sosis Bakar", "Pisang Goreng", "Nasi Goreng", "Nasi Uduk"] },
+    { id: "minuman", label: "Minuman", items: ["Teh Botol", "Air Mineral", "Jus Jeruk", "Susu Coklat", "Kopi Hitam", "Es Teh Manis", "Soda Gembira", "Sari Apel", "Es Lemon Tea", "Milkshake"] },
+    { id: "susu", label: "Susu & Olahan", items: ["Susu Full Cream", "Susu Kental Manis", "Susu UHT", "Yogurt Strawberry", "Yogurt Plain", "Keju Cheddar", "Keju Slice", "Susu Almond", "Keju Parmesan", "Susu Kedelai"] },
+    { id: "lainnya", label: "Lainnya", items: ["Bumbu Dapur", "Cuka Masak", "Sambal Botol", "Saos Tomat", "Saos Sambal", "Penyedap Rasa", "Kecap Asin", "Kaldu Ayam", "Rempah Bubuk", "Coklat Masak"] }
+  ];
+
+  kategoriList.forEach(kat => {
+    kat.items.forEach((nama, i) => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.dataset.category = kat.id;
+      card.innerHTML = `
+        <img src="https://via.placeholder.com/200x150?text=${encodeURIComponent(nama)}" alt="${nama}">
+        <div class="card-body">
+          <span class="badge">Promo</span>
+          <h4>${nama}</h4>
+          <p>Rp ${(8 + i * 2)}.000 · 10-20 min</p>
+        </div>
+      `;
+      produkContainer.appendChild(card);
+    });
+  });
+
+  // search bar
+  function searchProducts() {
+  const keyword = document.getElementById("searchInput").value.toLowerCase();
+  const cards = document.querySelectorAll(".card");
+
+  cards.forEach(card => {
+    const title = card.querySelector("h4").textContent.toLowerCase();
+    if (title.includes(keyword)) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
 
   
